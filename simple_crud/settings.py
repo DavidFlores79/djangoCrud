@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'simple_crud.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='sqlite:///db.sqlite3',
+        default=dj_database_url.config(default=os.getenv('DATABASE_URL')),
         conn_max_age=600
     )
 }
