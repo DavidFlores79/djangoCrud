@@ -27,8 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-9^dis^gn=xzd=pij-5dhgpknrc%)z+##im#+xe)!fqx*j%e$fh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = 'RAILWAY' not in os.environ
+# DEBUG = True
+DEBUG = 'RAILWAY' not in os.environ
 
 ALLOWED_HOSTS = ["*"]
 
@@ -130,8 +130,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# if not DEBUG:
-if DEBUG:
+# if DEBUG:
+if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
