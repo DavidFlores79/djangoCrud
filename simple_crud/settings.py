@@ -130,7 +130,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-if not DEBUG:
+# if not DEBUG:
+if DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
     STATICSTORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
